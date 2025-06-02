@@ -8,19 +8,18 @@ import io.appium.java_client.MobileBy;
 import io.appium.java_client.android.AndroidDriver;
 import io.appium.java_client.android.AndroidElement;
 
-public class EditProfile extends base {
+public class Logout extends base {
 
     public static void main(String[] args) throws Exception {
 
         AndroidDriver<AndroidElement> driver = capabilities();
 
-     // Isi Email
         driver.findElementByXPath("//android.widget.EditText[@resource-id=\"com.example.mobilebalikin:id/emailEditText\"]")
-                .sendKeys("auliaauliarahman09@gmail.com");
+        .sendKeys("tesaja09@gmail.com");
 
         // Isi Password
         driver.findElementByXPath("//android.widget.EditText[@resource-id=\"com.example.mobilebalikin:id/passwordEditText\"]")
-                .sendKeys("password123");
+        .sendKeys("password1234567");
 
         // Klik tombol Login
 		driver.findElementByXPath("//android.widget.Button[@resource-id=\"com.example.mobilebalikin:id/loginButton\"]")
@@ -34,14 +33,8 @@ public class EditProfile extends base {
         // Langsung ambil elemen dengan index 2 (elemen ke-3)
         navItems.get(2).click();
 
-        AndroidElement editProfileButton = (AndroidElement) wait.until(ExpectedConditions.elementToBeClickable(
-            MobileBy.id("com.example.mobilebalikin:id/editProfileButton")));
-        editProfileButton.click();
-
-        driver.findElementByXPath("//android.widget.EditText[@resource-id=\"com.example.mobilebalikin:id/nameEditText\"]").sendKeys("Aulia Vika");
-        driver.findElementByXPath("//android.widget.EditText[@resource-id=\"com.example.mobilebalikin:id/phoneEditText\"]").sendKeys("0895416534517");
-        driver.findElementByXPath("//android.widget.Button[@resource-id=\"com.example.mobilebalikin:id/saveButton\"]").click();
-
+   
+        driver.findElementByXPath("//android.widget.Button[@resource-id=\"com.example.mobilebalikin:id/logoutButton\"]").click();
         driver.quit();
     }
 }
